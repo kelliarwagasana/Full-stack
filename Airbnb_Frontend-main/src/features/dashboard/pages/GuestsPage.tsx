@@ -26,7 +26,7 @@ export default function GuestsPage() {
             {dashboardData.guests.map((guest, index) => (
               <tr
                 key={guest.id}
-                className={`shadow-sm transition hover:bg-[#fff1ec] ${
+                className={`shadow-sm transition hover:bg-[#fff7ed] ${
                   index % 2 === 0 ? 'bg-white' : 'bg-[#fff8f5]'
                 }`}
               >

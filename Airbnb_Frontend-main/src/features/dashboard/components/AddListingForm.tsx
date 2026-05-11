@@ -79,7 +79,7 @@ export default function AddListingForm({ listing, onClose }: AddListingFormProps
         transition={{ delay: 0.08, duration: 0.24 }}
       >
         <div>
-          <p className="text-sm font-semibold uppercase text-[#ff432e]">
+          <p className="text-sm font-semibold uppercase text-[#f97316]">
             {isEditing ? 'Update listing' : 'New listing'}
           </p>
           <h2 className="mt-1 text-2xl font-bold text-[#292626]">
@@ -131,7 +131,7 @@ export default function AddListingForm({ listing, onClose }: AddListingFormProps
               name={field.name}
               type={field.type ?? 'text'}
               defaultValue={field.defaultValue}
-              className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#ff432e] focus:ring-2 focus:ring-[#ff432e]/20"
+              className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20"
               required
             />
           </motion.label>
@@ -148,7 +148,7 @@ export default function AddListingForm({ listing, onClose }: AddListingFormProps
           <select
             name="type"
             defaultValue={listing?.type ?? ''}
-            className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#ff432e] focus:ring-2 focus:ring-[#ff432e]/20"
+            className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20"
             required
           >
             <option value="">Select type</option>
@@ -167,9 +167,9 @@ export default function AddListingForm({ listing, onClose }: AddListingFormProps
           }}
         >
           <span className="text-sm font-semibold text-slate-700">Listing images</span>
-          <div className="mt-2 rounded-2xl border border-dashed border-[#ffd6ce] bg-[#fff8f5] p-4">
-            <label className="flex cursor-pointer flex-col items-center justify-center rounded-xl border border-white bg-white px-5 py-8 text-center shadow-sm transition hover:border-[#ffd6ce] hover:bg-[#fff1ec]">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#fff1ec] text-xl text-[#ff432e]">
+          <div className="mt-2 rounded-2xl border border-dashed border-[#fed7aa] bg-[#fff8f5] p-4">
+            <label className="flex cursor-pointer flex-col items-center justify-center rounded-xl border border-white bg-white px-5 py-8 text-center shadow-sm transition hover:border-[#fed7aa] hover:bg-[#fff7ed]">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#fff7ed] text-xl text-[#f97316]">
                 <FiUpload />
               </span>
               <span className="mt-3 text-sm font-bold text-slate-950">Upload images from computer</span>
@@ -215,7 +215,7 @@ export default function AddListingForm({ listing, onClose }: AddListingFormProps
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2 }}
               >
-                <FiImage className="text-[#ff432e]" />
+                <FiImage className="text-[#f97316]" />
                 No listing image selected yet.
               </motion.div>
             )}
@@ -234,7 +234,7 @@ export default function AddListingForm({ listing, onClose }: AddListingFormProps
             name="amenities"
             placeholder="WiFi, Pool, Parking"
             defaultValue={listing?.amenities.join(', ')}
-            className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#ff432e] focus:ring-2 focus:ring-[#ff432e]/20"
+            className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20"
             required
           />
         </motion.label>
@@ -266,7 +266,7 @@ export default function AddListingForm({ listing, onClose }: AddListingFormProps
 
       <motion.button
         type="submit"
-        className="mt-6 rounded-xl bg-[#ff432e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+        className="mt-6 rounded-xl bg-[#f97316] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]"
         whileHover={{ y: -1 }}
         whileTap={{ scale: 0.98 }}
       >

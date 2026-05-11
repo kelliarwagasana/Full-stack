@@ -132,7 +132,7 @@ export default function ListingDetailPage() {
             <p className="text-xl font-semibold text-slate-900">Listing not found.</p>
             <Link
               to="/listings"
-              className="mt-5 inline-flex rounded-full bg-[#ff432e] px-5 py-3 text-sm font-semibold text-white hover:bg-[#e93623]"
+              className="mt-5 inline-flex rounded-full bg-[#f97316] px-5 py-3 text-sm font-semibold text-white hover:bg-[#000000]"
             >
               Back to listings
             </Link>
@@ -228,7 +228,7 @@ export default function ListingDetailPage() {
                           value={checkIn}
                           min={toDateInput(new Date())}
                           onChange={(event) => setCheckIn(event.target.value)}
-                          className="mt-2 w-full rounded-lg border border-slate-300 px-3 py-3 text-sm outline-none transition focus:border-[#ff432e] focus:ring-2 focus:ring-[#ff432e]/20"
+                          className="mt-2 w-full rounded-lg border border-slate-300 px-3 py-3 text-sm outline-none transition focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20"
                           required
                         />
                       </label>
@@ -239,7 +239,7 @@ export default function ListingDetailPage() {
                           value={checkOut}
                           min={checkIn}
                           onChange={(event) => setCheckOut(event.target.value)}
-                          className="mt-2 w-full rounded-lg border border-slate-300 px-3 py-3 text-sm outline-none transition focus:border-[#ff432e] focus:ring-2 focus:ring-[#ff432e]/20"
+                          className="mt-2 w-full rounded-lg border border-slate-300 px-3 py-3 text-sm outline-none transition focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20"
                           required
                         />
                       </label>
@@ -257,13 +257,13 @@ export default function ListingDetailPage() {
                     </div>
 
                     {bookingError && (
-                      <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+                      <p className="rounded-lg border border-[#f97316] bg-[#fff7ed] px-4 py-3 text-sm font-bold text-black">
                         {bookingError}
                       </p>
                     )}
 
                     {bookingMessage && (
-                      <p className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700">
+                      <p className="rounded-lg border border-black bg-white px-4 py-3 text-sm font-bold text-black">
                         {bookingMessage}
                       </p>
                     )}
@@ -271,14 +271,14 @@ export default function ListingDetailPage() {
                     {!currentUser ? (
                       <Link
                         to="/login"
-                        className="inline-flex w-full items-center justify-center rounded-full bg-[#ff432e] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#e93623]"
+                        className="inline-flex w-full items-center justify-center rounded-full bg-[#f97316] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#000000]"
                       >
                         Login to book
                       </Link>
                     ) : currentUser.role === 'GUEST' ? (
                       <button
                         type="submit"
-                        className="w-full rounded-full bg-[#ff432e] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+                        className="w-full rounded-full bg-[#f97316] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]"
                       >
                         Book stay
                       </button>
@@ -303,7 +303,7 @@ export default function ListingDetailPage() {
 
                   <Link
                     to="/listings"
-                    className="inline-flex w-full items-center justify-center rounded-full bg-[#ff432e] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#e93623]"
+                    className="inline-flex w-full items-center justify-center rounded-full bg-[#f97316] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#000000]"
                   >
                     Explore more stays
                   </Link>
@@ -319,7 +319,7 @@ export default function ListingDetailPage() {
                     {reviews.length ? `${averageRating.toFixed(1)} out of 5` : 'No reviews yet'}
                   </h2>
                 </div>
-                <div className="flex text-2xl text-[#ff432e]" aria-label={`${averageRating.toFixed(1)} star rating`}>
+                <div className="flex text-2xl text-[#f97316]" aria-label={`${averageRating.toFixed(1)} star rating`}>
                   {[1, 2, 3, 4, 5].map((star) => (
                     <span key={star}>{star <= Math.round(averageRating) ? '*' : '-'}</span>
                   ))}
@@ -341,7 +341,7 @@ export default function ListingDetailPage() {
                           onClick={() => setReviewRating(rating)}
                           className={`flex h-10 w-10 items-center justify-center rounded-full border text-sm font-bold transition ${
                             rating <= reviewRating
-                              ? 'border-[#ff432e] bg-[#ff432e] text-white'
+                              ? 'border-[#f97316] bg-[#f97316] text-white'
                               : 'border-slate-300 bg-white text-slate-600 hover:border-[#ff9a8d]'
                           }`}
                           aria-label={`${rating} star rating`}
@@ -358,20 +358,20 @@ export default function ListingDetailPage() {
                       value={reviewComment}
                       onChange={(event) => setReviewComment(event.target.value)}
                       rows={4}
-                      className="mt-2 w-full resize-none rounded-2xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#ff432e] focus:ring-2 focus:ring-[#ff432e]/20"
+                      className="mt-2 w-full resize-none rounded-2xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20"
                       placeholder="Tell future guests what stood out..."
                       required
                     />
                   </label>
 
                   {reviewError && (
-                    <p className="mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+                    <p className="mt-4 rounded-lg border border-[#f97316] bg-[#fff7ed] px-4 py-3 text-sm font-bold text-black">
                       {reviewError}
                     </p>
                   )}
 
                   {reviewMessage && (
-                    <p className="mt-4 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700">
+                    <p className="mt-4 rounded-lg border border-black bg-white px-4 py-3 text-sm font-bold text-black">
                       {reviewMessage}
                     </p>
                   )}
@@ -379,14 +379,14 @@ export default function ListingDetailPage() {
                   {!currentUser ? (
                     <Link
                       to="/login"
-                      className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-[#ff432e] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+                      className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-[#f97316] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]"
                     >
                       Login to review
                     </Link>
                   ) : currentUser.role === 'GUEST' ? (
                     <button
                       type="submit"
-                      className="mt-5 w-full rounded-full bg-[#ff432e] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+                      className="mt-5 w-full rounded-full bg-[#f97316] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]"
                     >
                       Post review
                     </button>
@@ -415,7 +415,7 @@ export default function ListingDetailPage() {
                               <p className="text-xs text-slate-500">{new Date(review.createdAt).toLocaleDateString()}</p>
                             </div>
                           </div>
-                          <span className="rounded-full bg-[#fff1ec] px-3 py-1 text-sm font-bold text-[#ff432e]">
+                          <span className="rounded-full bg-[#fff7ed] px-3 py-1 text-sm font-bold text-[#f97316]">
                             {review.rating}/5
                           </span>
                         </div>

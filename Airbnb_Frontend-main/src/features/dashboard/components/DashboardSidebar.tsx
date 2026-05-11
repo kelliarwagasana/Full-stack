@@ -23,27 +23,27 @@ export default function DashboardSidebar({ currentUser, activeSection, isVisible
 
   return (
     <aside
-      className={`z-40 border-r border-[#eee4e0] bg-[#f5eeee] text-[#473f3d] transition-transform duration-300 lg:fixed lg:inset-y-0 lg:left-0 lg:w-[315px] ${
+      className={`z-40 border-r-2 border-black bg-white text-black transition-transform duration-300 lg:fixed lg:inset-y-0 lg:left-0 lg:w-[315px] ${
         isVisible ? 'block translate-x-0' : 'hidden lg:block lg:-translate-x-full'
       }`}
     >
       <div className="flex h-[78px] items-center gap-3 px-6">
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#ff432e] text-xl font-black text-white">A</span>
+        <span className="flex h-10 w-10 items-center justify-center border-2 border-[#f97316] bg-black text-xl font-black text-[#f97316]">L</span>
         <div className="flex items-baseline gap-1">
-          <p className="text-4xl font-semibold tracking-tight text-[#292626]">air</p>
-          <p className="text-2xl font-semibold italic text-[#ff432e]">bnb</p>
+          <p className="text-4xl font-black tracking-tight text-black">List</p>
+          <p className="text-2xl font-black text-[#f97316]">On</p>
         </div>
       </div>
 
-      <div className="mx-6 mb-6 flex items-center gap-3 rounded-lg border border-white/70 bg-white/45 p-3 lg:hidden">
+      <div className="mx-6 mb-6 flex items-center gap-3 border-2 border-black bg-white p-3 shadow-[5px_5px_0_#f97316] lg:hidden">
         <UserAvatar user={currentUser} size="md" />
         <div className="min-w-0">
-          <p className="truncate font-semibold text-[#292626]">{currentUser.name}</p>
-          <p className="truncate text-xs text-[#857d7a]">{currentUser.email}</p>
+          <p className="truncate font-black text-black">{currentUser.name}</p>
+          <p className="truncate text-xs text-black/55">{currentUser.email}</p>
         </div>
       </div>
 
-      <p className="px-8 pb-4 text-[11px] font-bold uppercase text-[#8f8784]">Main menu</p>
+      <p className="px-8 pb-4 text-[11px] font-black uppercase tracking-[0.2em] text-[#f97316]">Main menu</p>
       <nav className="flex gap-2 overflow-x-auto px-6 pb-6 lg:flex-col lg:overflow-visible">
         {items.map((item) => {
           const isActive = item.section === activeSection
@@ -52,13 +52,13 @@ export default function DashboardSidebar({ currentUser, activeSection, isVisible
             <Link
               key={item.section}
               to={item.section === 'overview' ? '/dashboard' : `/dashboard/${item.section}`}
-              className={`flex items-center gap-3 whitespace-nowrap rounded-[22px] px-6 py-3 text-sm font-semibold transition ${
+              className={`flex items-center gap-3 whitespace-nowrap border-2 px-6 py-3 text-sm font-black transition ${
                 isActive
-                  ? 'bg-[#f9ded8] text-[#ff432e] shadow-[inset_5px_0_0_#ff432e]'
-                  : 'text-[#514946] hover:bg-white/60 hover:text-[#ff432e]'
+                  ? 'border-black bg-[#f97316] text-white shadow-[5px_5px_0_#000]'
+                  : 'border-transparent text-black hover:border-black hover:bg-[#fff7ed] hover:text-[#f97316]'
               }`}
             >
-              <span className={`flex h-5 w-5 items-center justify-center rounded-full border text-[10px] ${isActive ? 'border-[#ff432e]' : 'border-[#514946]'}`}>
+              <span className={`flex h-5 w-5 items-center justify-center border text-[10px] ${isActive ? 'border-white' : 'border-black'}`}>
                 {item.marker}
               </span>
               {item.label}

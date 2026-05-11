@@ -23,14 +23,14 @@ export default function DashboardLayout() {
 
   if (!currentUser) {
     return (
-      <div className="min-h-screen bg-white text-slate-900">
+      <div className="min-h-screen bg-white text-black">
         <Navbar variant="solid" />
         <main className="mx-auto flex min-h-[60vh] max-w-xl items-center px-6 py-16 text-center">
-          <div className="w-full rounded-lg border border-slate-200 bg-slate-50 p-8 shadow-sm">
-            <h1 className="text-3xl font-bold text-slate-950">Login required</h1>
+          <div className="w-full border-2 border-black bg-white p-8 shadow-[8px_8px_0_#f97316]">
+            <h1 className="text-3xl font-black text-black">Login required</h1>
             <Link
               to="/login"
-              className="mt-6 inline-flex rounded-lg bg-[#ff432e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+              className="mt-6 inline-flex border-2 border-black bg-[#f97316] px-5 py-3 text-sm font-black text-white transition hover:bg-black"
             >
               Login
             </Link>
@@ -45,7 +45,7 @@ export default function DashboardLayout() {
   }
 
   return (
-    <div className={`min-h-screen bg-[#f7f1ef] text-[13px] text-[#473f3d] transition-all duration-300 ${isSidebarVisible ? 'lg:pl-[315px]' : ''}`}>
+    <div className={`min-h-screen bg-white text-[13px] text-black transition-all duration-300 ${isSidebarVisible ? 'lg:pl-[315px]' : ''}`}>
       <DashboardSidebar currentUser={currentUser} activeSection={activeSection} isVisible={isSidebarVisible} />
       <div className="min-w-0">
         <DashboardTopbar

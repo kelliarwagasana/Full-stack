@@ -20,7 +20,7 @@ export default function ReviewsPage() {
               <div key={review.id} className="p-5">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <p className="font-semibold text-slate-950">{listing?.title ?? 'Listing'}</p>
-                  <p className="text-sm font-semibold text-[#ff432e]">{review.rating}/5</p>
+                  <p className="text-sm font-semibold text-[#f97316]">{review.rating}/5</p>
                 </div>
                 <p className="mt-2 text-sm leading-6 text-slate-600">{review.comment}</p>
                 <p className="mt-3 text-sm text-slate-500">

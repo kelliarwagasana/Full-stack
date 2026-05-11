@@ -63,7 +63,7 @@ export default function BookingsPage() {
                 return (
                   <tr
                     key={booking.id}
-                    className={`shadow-sm transition hover:bg-[#fff1ec] ${
+                    className={`shadow-sm transition hover:bg-[#fff7ed] ${
                       index % 2 === 0 ? 'bg-white' : 'bg-[#fff8f5]'
                     }`}
                   >

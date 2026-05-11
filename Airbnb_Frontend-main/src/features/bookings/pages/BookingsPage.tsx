@@ -82,7 +82,7 @@ export default function BookingsPage() {
             <h1 className="text-3xl font-bold text-slate-950">Login required</h1>
             <a
               href="#/login"
-              className="mt-6 inline-flex rounded-lg bg-[#ff432e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+              className="mt-6 inline-flex rounded-lg bg-[#f97316] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]"
             >
               Login
             </a>
@@ -101,7 +101,7 @@ export default function BookingsPage() {
       <Navbar variant="solid" />
       <main className="mx-auto max-w-6xl px-6 py-10">
         <section className="rounded-lg border border-slate-200 bg-white p-8 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#ff432e]">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f97316]">
             Guest
           </p>
           <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -113,7 +113,7 @@ export default function BookingsPage() {
             </div>
             <a
               href="#/listings"
-              className="inline-flex rounded-lg bg-[#ff432e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+              className="inline-flex rounded-lg bg-[#f97316] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]"
             >
               Book another stay
             </a>
@@ -126,7 +126,7 @@ export default function BookingsPage() {
               <h2 className="text-2xl font-bold text-slate-950">No bookings yet</h2>
               <a
                 href="#/listings"
-                className="mt-6 inline-flex rounded-lg bg-[#ff432e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+                className="mt-6 inline-flex rounded-lg bg-[#f97316] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]"
               >
                 Explore stays
               </a>
@@ -168,13 +168,13 @@ export default function BookingsPage() {
                             ...dates,
                             [booking.id]: event.target.value,
                           }))}
-                          className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#ff432e]"
+                          className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#f97316]"
                         />
                       </label>
                       <button
                         type="button"
                         onClick={() => handleExtend(booking)}
-                        className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#ff432e] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+                        className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#f97316] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#000000]"
                       >
                         <FiCalendar />
                         Extend

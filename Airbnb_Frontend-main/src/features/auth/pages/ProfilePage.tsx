@@ -42,7 +42,7 @@ export default function ProfilePage() {
             </p>
             <Link
               to="/login"
-              className="mt-6 inline-flex rounded-xl bg-[#ff432e] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#e93623]"
+              className="mt-6 inline-flex rounded-xl bg-[#f97316] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#000000]"
             >
               Login
             </Link>
@@ -134,7 +134,7 @@ export default function ProfilePage() {
       <main className="mx-auto max-w-6xl px-5 py-8">
         <section className="overflow-hidden rounded-3xl border border-[#eadfdb] bg-white shadow-xl shadow-slate-900/5">
           <div className="bg-slate-950 px-6 py-10 text-white md:px-10">
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#ff432e]">Guest profile</p>
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#f97316]">Guest profile</p>
             <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
                 <UserAvatar user={previewUser} size="xl" className="ring-4 ring-white/20" />
@@ -162,7 +162,7 @@ export default function ProfilePage() {
                       setError('')
                       setIsEditing(true)
                     }}
-                    className="inline-flex w-fit items-center gap-2 rounded-xl bg-[#ff432e] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#e93623]"
+                    className="inline-flex w-fit items-center gap-2 rounded-xl bg-[#f97316] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#000000]"
                   >
                     <FiEdit3 />
                     Update profile
@@ -177,7 +177,7 @@ export default function ProfilePage() {
               <form onSubmit={handleSubmit} className="grid gap-5 md:grid-cols-2">
                 <div className="rounded-2xl border border-[#eadfdb] bg-[#fff8f5] p-5 md:col-span-2">
                   <div className="grid gap-6 lg:grid-cols-[14rem_1fr] lg:items-center">
-                    <div className="mx-auto flex h-52 w-52 items-center justify-center overflow-hidden rounded-full border-4 border-white bg-white shadow-lg shadow-[#ffd6ce]">
+                    <div className="mx-auto flex h-52 w-52 items-center justify-center overflow-hidden rounded-full border-4 border-white bg-white shadow-lg shadow-[#fed7aa]">
                       {avatar ? (
                         <img src={avatar} alt={`${name || currentUser.name} preview`} className="h-full w-full object-cover" />
                       ) : (
@@ -186,13 +186,13 @@ export default function ProfilePage() {
                     </div>
 
                     <div>
-                      <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#ff432e]">Avatar preview</p>
+                      <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#f97316]">Avatar preview</p>
                       <h2 className="mt-2 text-2xl font-black text-slate-950">Upload from your computer</h2>
                       <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
                         Pick an image, preview it here, then save your profile when it looks right.
                       </p>
                       <div className="mt-5 flex flex-wrap items-center gap-3">
-                        <label className="inline-flex cursor-pointer items-center gap-2 rounded-xl bg-[#ff432e] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#e93623]">
+                        <label className="inline-flex cursor-pointer items-center gap-2 rounded-xl bg-[#f97316] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#000000]">
                           <FiUpload />
                           {avatar ? 'Change image' : 'Upload image'}
                           <input type="file" accept="image/*" onChange={handleAvatarUpload} className="sr-only" />
@@ -236,7 +236,7 @@ export default function ProfilePage() {
                 <div className="flex flex-wrap gap-3 md:col-span-2">
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#ff432e] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#e93623]"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[#f97316] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#000000]"
                   >
                     <FiSave />
                     Save profile
@@ -276,7 +276,7 @@ export default function ProfilePage() {
                     { label: 'Hosting', value: currentUser.role === 'HOST' ? 'Host access enabled' : 'Guest account' },
                   ].map((item) => (
                     <div key={item.label} className="rounded-2xl border border-[#eadfdb] bg-[#fff8f5] p-5">
-                      <FiUser className="mb-3 text-[#ff432e]" />
+                      <FiUser className="mb-3 text-[#f97316]" />
                       <p className="text-sm font-medium text-slate-500">{item.label}</p>
                       <p className="mt-2 font-bold text-slate-950">{item.value}</p>
                     </div>
@@ -306,7 +306,7 @@ function ProfileInput({
       <input
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold outline-none transition focus:border-[#ff432e] focus:ring-2 focus:ring-[#ff432e]/20"
+        className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold outline-none transition focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20"
         required
       />
     </label>

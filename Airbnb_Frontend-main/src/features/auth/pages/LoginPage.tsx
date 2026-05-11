@@ -43,19 +43,19 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="grid h-screen overflow-hidden bg-white text-slate-900 lg:grid-cols-[1.05fr_0.95fr]">
+    <main className="grid h-screen overflow-hidden bg-white text-black lg:grid-cols-[0.9fr_1.1fr]">
       <div
-        className="hidden bg-slate-950 bg-cover bg-center text-white lg:block"
-        style={{ backgroundImage: `linear-gradient(90deg, rgba(15,23,42,.9), rgba(15,23,42,.35)), url(${authImage})` }}
+        className="hidden border-r-2 border-black bg-black bg-cover bg-center text-white lg:block"
+        style={{ backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.55)), url(${authImage})` }}
       >
         <div className="flex h-full flex-col justify-between p-10">
           <div>
             <Link to="/" className="inline-flex items-center text-4xl font-black tracking-tight">
-              Air<span className="text-[#ff432e]">bnb</span>
+              List<span className="text-[#f97316]">On</span>
             </Link>
           </div>
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#ff432e]">Secure access</p>
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f97316]">Secure access</p>
             <h2 className="mt-4 max-w-2xl text-5xl font-black leading-tight tracking-tight">
               Book, host, and manage stays from one account.
             </h2>
@@ -67,19 +67,19 @@ export default function LoginPage() {
       </div>
 
       <div
-        className="flex h-screen items-center justify-center bg-[#f7f3f0] px-4"
+        className="flex h-screen items-center justify-center bg-white px-4"
       >
         <div className="w-full max-w-md">
           {user ? (
-            <div className="rounded-2xl border border-white/80 bg-white/95 p-6 shadow-2xl shadow-slate-950/30 backdrop-blur">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#ff432e]">Signed in</p>
-              <h1 className="mt-3 text-3xl font-bold text-slate-950">Welcome, {user.name}</h1>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
+            <div className="border-2 border-black bg-white p-6 shadow-[10px_10px_0_#f97316]">
+              <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f97316]">Signed in</p>
+              <h1 className="mt-3 text-3xl font-black text-black">Welcome, {user.name}</h1>
+              <p className="mt-3 text-sm font-semibold leading-6 text-black/60">
                 Your account is active and ready to browse stays.
               </p>
               <Link
                 to={getPostLoginPath(user)}
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#ff432e] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#e93623]"
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 border-2 border-black bg-[#f97316] px-5 py-3 text-sm font-black text-white transition hover:bg-black"
               >
                 Continue
                 <FiArrowRight />
@@ -93,9 +93,9 @@ export default function LoginPage() {
                 onDemoLogin={handleDemoLogin}
                 onGoogleLogin={handleGoogleLogin}
               />
-              <p className="mt-3 rounded-full bg-white/90 px-4 py-2.5 text-center text-sm text-slate-700 shadow-lg shadow-slate-950/10 backdrop-blur">
+              <p className="mt-5 border-2 border-black bg-white px-4 py-2.5 text-center text-sm font-semibold text-black shadow-[5px_5px_0_#f97316]">
                 New here?{' '}
-                <Link to="/register" className="font-semibold text-[#ff432e] hover:text-[#c92f20]">
+                <Link to="/register" className="font-black text-[#f97316] hover:text-black">
                   Create an account
                 </Link>
               </p>

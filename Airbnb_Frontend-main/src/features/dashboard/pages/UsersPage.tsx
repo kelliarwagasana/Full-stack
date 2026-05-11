@@ -43,7 +43,7 @@ export default function UsersPage() {
             {users.map((user, index) => (
               <tr
                 key={user.id}
-                className={`shadow-sm transition hover:bg-[#fff1ec] ${
+                className={`shadow-sm transition hover:bg-[#fff7ed] ${
                   index % 2 === 0 ? 'bg-white' : 'bg-[#fff8f5]'
                 }`}
               >

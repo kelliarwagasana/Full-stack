@@ -22,7 +22,7 @@ const stagger = {
 
 function ScriptLabel({ children, light = false }: { children: string; light?: boolean }) {
   return (
-    <p className={`font-[cursive] text-3xl italic ${light ? 'text-white' : 'text-[#ff432e]'}`}>
+    <p className={`text-sm font-black uppercase tracking-[0.35em] ${light ? 'text-white' : 'text-[#f97316]'}`}>
       {children}
     </p>
   )
@@ -44,74 +44,80 @@ export default function HomePage() {
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-white text-[#171b22]">
+    <div className="relative min-h-screen bg-white text-black">
       <div
         className="fixed inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${listingsData[0].photos[0]?.url})` }}
       />
       <div
         className={`fixed inset-0 transition-all duration-500 ${
-          isScrolled ? 'bg-white/95' : 'bg-slate-900/40'
+          isScrolled ? 'bg-white/95' : 'bg-black/55'
         }`}
       />
       <div
         className={`fixed inset-0 bg-gradient-to-b transition-all duration-500 ${
           isScrolled
             ? 'from-white/90 via-white/70 to-white/100'
-            : 'from-transparent via-slate-900/30 to-slate-950/95'
+            : 'from-black/10 via-black/30 to-black/95'
         }`}
       />
 
       <Navbar />
 
       <main className={`relative ${isScrolled ? 'pt-24' : ''}`}>
-        <section className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-24">
+        <section className="relative z-10 mx-auto grid min-h-screen max-w-7xl items-end gap-10 px-6 pb-16 pt-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <motion.div
             variants={stagger}
             initial="hidden"
             animate="visible"
-            className="mx-auto w-full max-w-4xl space-y-6 text-center"
+            className="w-full max-w-4xl space-y-7 border-l-8 border-[#f97316] pl-6 text-left"
           >
             <motion.p
               variants={fadeUp}
               className={`text-sm font-semibold uppercase tracking-[0.35em] ${
-                isScrolled ? 'text-slate-600' : 'text-slate-200/90'
+                isScrolled ? 'text-black/70' : 'text-white/85'
               }`}
             >
-              Premium vacation rentals worldwide
+              Orange-label stays worldwide
             </motion.p>
             <motion.h1
               variants={fadeUp}
-              className={`text-5xl font-bold leading-tight tracking-[-0.04em] sm:text-6xl lg:text-7xl ${
-                isScrolled ? 'text-slate-900' : 'text-white'
+              className={`max-w-3xl text-5xl font-black leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl ${
+                isScrolled ? 'text-black' : 'text-white'
               }`}
             >
-              Find your perfect stay
+              Stays with a sharper point of view.
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className={`mx-auto max-w-2xl text-base leading-8 sm:text-lg ${
-                isScrolled ? 'text-slate-600' : 'text-slate-200/90'
+              className={`max-w-2xl text-base leading-8 sm:text-lg ${
+                isScrolled ? 'text-black/70' : 'text-white/85'
               }`}
             >
               Browse curated apartments, houses, villas, and cabins. Book securely and discover authentic experiences worldwide.
             </motion.p>
+          </motion.div>
 
-            <motion.div
-              variants={fadeUp}
-              className={`mx-auto mt-10 flex w-full max-w-3xl flex-col gap-4 rounded-full border p-2 shadow-2xl backdrop-blur-xl sm:flex-row sm:px-4 ${
-                isScrolled ? 'border-slate-200 bg-white/90' : 'border-white/10 bg-white/10'
-              }`}
-            >
-              <label className={`flex flex-1 items-center gap-3 rounded-full px-4 py-4 shadow-sm ${isScrolled ? 'bg-slate-100' : 'bg-white/90'}`}>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="w-full border-2 border-black bg-white p-4 shadow-[12px_12px_0_#f97316] lg:ml-auto lg:max-w-md"
+          >
+            <p className="text-xs font-black uppercase tracking-[0.32em] text-[#f97316]">Start here</p>
+            <h2 className="mt-3 text-3xl font-black text-black">Build your shortlist</h2>
+            <div className="mt-6 grid gap-3">
+              <label className="grid gap-2 border-2 border-black bg-white px-4 py-3">
+                <span className="text-xs font-black uppercase tracking-[0.18em] text-black/50">Search</span>
                 <input
                   type="search"
                   placeholder="Search places, cities..."
-                  className="w-full bg-transparent text-sm font-medium text-slate-900 outline-none placeholder:text-slate-400"
+                  className="w-full bg-transparent text-sm font-bold text-black outline-none placeholder:text-black/35"
                 />
               </label>
-              <label className={`flex flex-1 items-center gap-3 rounded-full px-4 py-4 shadow-sm ${isScrolled ? 'bg-slate-100' : 'bg-white/90'}`}>
-                <select className="w-full bg-transparent text-sm font-medium text-slate-900 outline-none">
+              <label className="grid gap-2 border-2 border-black bg-white px-4 py-3">
+                <span className="text-xs font-black uppercase tracking-[0.18em] text-black/50">Location</span>
+                <select className="w-full bg-transparent text-sm font-bold text-black outline-none">
                   <option>Location</option>
                   <option>Tulum, Mexico</option>
                   <option>Lisbon, Portugal</option>
@@ -120,26 +126,26 @@ export default function HomePage() {
               </label>
               <Link
                 to="/explore"
-                className="inline-flex min-w-[12rem] items-center justify-center rounded-full bg-[#ff432e] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#e93623] sm:min-w-[12rem]"
+                className="inline-flex items-center justify-center border-2 border-black bg-[#f97316] px-6 py-4 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:bg-black"
               >
                 Explore stays
               </Link>
-            </motion.div>
+            </div>
           </motion.div>
         </section>
 
-        <section className="relative z-10 bg-white">
+        <section className="relative z-10 border-y-2 border-black bg-white">
           <div className="mx-auto max-w-7xl px-6 py-24">
-            <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div className="mb-10 grid gap-6 border-b-2 border-black pb-8 md:grid-cols-[0.8fr_1.2fr_auto] md:items-end">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#ff432e]">Featured properties</p>
-                <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
-                  Handpicked homes for your next adventure.
-                </h2>
+                <p className="text-sm font-black uppercase tracking-[0.35em] text-[#f97316]">Featured properties</p>
               </div>
+              <h2 className="text-3xl font-black text-black sm:text-5xl">
+                Handpicked homes, rebuilt into a bolder catalog.
+              </h2>
               <Link
                 to="/explore"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-300 hover:bg-white"
+                className="inline-flex items-center justify-center border-2 border-black bg-black px-5 py-3 text-sm font-black uppercase tracking-[0.14em] text-white transition hover:bg-[#f97316]"
               >
                 Explore more
               </Link>
@@ -152,26 +158,30 @@ export default function HomePage() {
             </div>
           </div>
         </section>    
-        <section className="relative z-10 overflow-hidden py-28 text-center text-white">
+        <section className="relative z-10 overflow-hidden border-b-2 border-black py-28 text-white">
           <img
             src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80"
             alt=""
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-black/75" />
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
-            className="relative mx-auto max-w-5xl px-6"
+            className="relative mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-[0.45fr_1fr] md:items-end"
           >
-            <ScriptLabel>Testimonial</ScriptLabel>
-            <h2 className="mt-3 text-5xl font-semibold leading-tight">See What Our Clients Say About Us</h2>
-            <p className="mx-auto mt-10 max-w-4xl text-2xl leading-10 text-white/90">
-              ListOn helped us find a stay that matched the photos, the neighborhood, and the mood of the trip.
-            </p>
-            <p className="mt-8 text-sm font-bold uppercase tracking-[0.24em]">Mark South Everett</p>
+            <div>
+              <ScriptLabel>Testimonial</ScriptLabel>
+              <h2 className="mt-3 text-5xl font-black leading-tight">A stay that matched the brief.</h2>
+            </div>
+            <div className="border-l-8 border-[#f97316] pl-6">
+              <p className="max-w-4xl text-2xl leading-10 text-white/90">
+                ListOn helped us find a stay that matched the photos, the neighborhood, and the mood of the trip.
+              </p>
+              <p className="mt-8 text-sm font-bold uppercase tracking-[0.24em] text-[#f97316]">Mark South Everett</p>
+            </div>
           </motion.div>
         </section>
       </main>

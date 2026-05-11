@@ -10,7 +10,7 @@ export default function SavedListings() {
         <h1 className="text-2xl font-bold text-slate-950">Login to view saved stays</h1>
         <a
           href="#/login"
-          className="mt-6 inline-flex rounded-lg bg-[#ff432e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+          className="mt-6 inline-flex rounded-lg bg-[#f97316] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]"
         >
           Login
         </a>
@@ -41,7 +41,7 @@ export default function SavedListings() {
         </p>
         <a
           href="#/listings"
-          className="mt-6 inline-flex rounded-lg bg-[#ff432e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+          className="mt-6 inline-flex rounded-lg bg-[#f97316] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]"
         >
           Browse listings
         </a>

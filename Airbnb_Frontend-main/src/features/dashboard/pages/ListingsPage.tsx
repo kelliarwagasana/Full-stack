@@ -49,7 +49,7 @@ function AvailableListingsSection({
                 return (
                   <tr
                     key={listing.id}
-                    className={`shadow-sm transition hover:bg-[#fff1ec] ${
+                    className={`shadow-sm transition hover:bg-[#fff7ed] ${
                       index % 2 === 0 ? 'bg-white' : 'bg-[#fff8f5]'
                     }`}
                   >
@@ -69,7 +69,7 @@ function AvailableListingsSection({
                       </div>
                     </td>
                     <td className="px-5 py-4">
-                      <span className="inline-flex rounded-lg border border-[#ffd6ce] bg-[#fff1ec] px-3 py-1 text-xs font-semibold text-[#c92f20]">
+                      <span className="inline-flex rounded-lg border border-[#fed7aa] bg-[#fff7ed] px-3 py-1 text-xs font-semibold text-[#f97316]">
                         {listing.type}
                       </span>
                     </td>
@@ -81,7 +81,7 @@ function AvailableListingsSection({
                         <button
                           type="button"
                           onClick={() => onUpdateListing(listing)}
-                          className="inline-flex items-center gap-2 rounded-lg border border-[#ffd6ce] bg-[#fff1ec] px-3 py-2 text-xs font-semibold text-[#c92f20] transition hover:bg-[#ffe2dc]"
+                          className="inline-flex items-center gap-2 rounded-lg border border-[#fed7aa] bg-[#fff7ed] px-3 py-2 text-xs font-semibold text-[#f97316] transition hover:bg-[#ffe2dc]"
                         >
                           <FiEdit3 />
                           Update
@@ -125,7 +125,7 @@ export default function ListingsPage() {
         <button
           type="button"
           onClick={handleAddListing}
-          className="inline-flex w-fit items-center gap-2 rounded-xl bg-[#ff432e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+          className="inline-flex w-fit items-center gap-2 rounded-xl bg-[#f97316] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]"
         >
           <FiPlus />
           Add listing

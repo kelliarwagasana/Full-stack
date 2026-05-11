@@ -20,14 +20,14 @@ function StatGrid({ data, isAdmin }: { data: DashboardData; isAdmin: boolean }) 
             <p className="text-sm text-[#a79d99]">{item.label}</p>
             <p className="mt-2 text-3xl font-medium text-[#473f3d]">{item.value}</p>
           </div>
-          <div className="relative h-16 w-16 text-[#ff432e]">
+          <div className="relative h-16 w-16 text-[#f97316]">
             {item.accent === 'pie' ? (
-              <span className="block h-12 w-12 rounded-full bg-[#ff432e] shadow-[inset_18px_0_0_rgba(255,255,255,0.9)]" />
+              <span className="block h-12 w-12 rounded-full bg-[#f97316] shadow-[inset_18px_0_0_rgba(255,255,255,0.9)]" />
             ) : (
-              <span className="absolute inset-x-1 bottom-2 h-10 rounded-b-lg border-b-4 border-l-4 border-[#ff432e]">
-                <span className="absolute left-1 top-2 h-7 w-2 rounded-full border-2 border-[#ff432e]" />
-                <span className="absolute left-6 top-5 h-5 w-2 rounded-full border-2 border-[#ff432e]" />
-                <span className="absolute left-11 top-1 h-9 w-2 rounded-full border-2 border-[#ff432e]" />
+              <span className="absolute inset-x-1 bottom-2 h-10 rounded-b-lg border-b-4 border-l-4 border-[#f97316]">
+                <span className="absolute left-1 top-2 h-7 w-2 rounded-full border-2 border-[#f97316]" />
+                <span className="absolute left-6 top-5 h-5 w-2 rounded-full border-2 border-[#f97316]" />
+                <span className="absolute left-11 top-1 h-9 w-2 rounded-full border-2 border-[#f97316]" />
               </span>
             )}
           </div>
@@ -42,7 +42,7 @@ function OverviewSection({ data, currentUser }: { data: DashboardData; currentUs
 
   return (
     <div className="space-y-4">
-      <section className="relative overflow-hidden rounded-br-2xl rounded-bl-2xl bg-gradient-to-r from-[#ff432e] via-[#ff742e] to-[#ffc145] px-6 py-5 text-white">
+      <section className="relative overflow-hidden rounded-br-2xl rounded-bl-2xl bg-gradient-to-r from-[#f97316] via-[#ff742e] to-[#ffc145] px-6 py-5 text-white">
         <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(30deg,#fff_1px,transparent_1px),linear-gradient(150deg,#fff_1px,transparent_1px)] [background-size:34px_20px]" />
         <div className="relative flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
@@ -98,7 +98,7 @@ export default function OverviewPage() {
           <div key={item.label} className="border-[#f0e5e1] p-6 md:border-r last:md:border-r-0">
             <p className="text-base font-medium text-[#473f3d]">{item.label}</p>
             <p className="mt-7 text-4xl font-medium text-[#473f3d]">{item.value}</p>
-            <p className={`mt-3 text-sm font-semibold ${item.good ? 'text-[#65a719]' : 'text-[#ff432e]'}`}>{item.note}</p>
+            <p className={`mt-3 text-sm font-semibold ${item.good ? 'text-[#65a719]' : 'text-[#f97316]'}`}>{item.note}</p>
           </div>
         ))}
       </section>
@@ -110,7 +110,7 @@ export default function OverviewPage() {
           </div>
           <Link
             to="/dashboard/listings"
-            className="hidden rounded-lg border border-[#ff432e] px-4 py-2 text-sm font-semibold text-[#ff432e] transition hover:bg-[#fff4f0] sm:inline-flex"
+            className="hidden rounded-lg border border-[#f97316] px-4 py-2 text-sm font-semibold text-[#f97316] transition hover:bg-[#fff4f0] sm:inline-flex"
           >
             Add listing
           </Link>

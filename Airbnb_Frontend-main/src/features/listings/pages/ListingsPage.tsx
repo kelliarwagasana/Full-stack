@@ -315,13 +315,13 @@ export default function ListingsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white text-black">
       <Navbar variant="solid" />
 
       <main>
-        <section className="border-b border-slate-200 bg-white px-5 pb-10 pt-6">
+        <section className="border-b-2 border-black bg-white px-5 pb-10 pt-8">
           <div className="mx-auto max-w-7xl">
-            <div className="mx-auto mb-6 flex max-w-xl justify-center gap-8 text-sm font-semibold text-slate-500">
+            <div className="mx-auto mb-6 flex max-w-2xl justify-center gap-2 border-2 border-black bg-white p-1 text-xs font-black uppercase tracking-[0.14em] text-black">
               {[
                 { id: 'filters', label: 'Search stays', icon: FiSearch },
                 { id: 'ai', label: 'AI search', icon: FiZap },
@@ -335,10 +335,10 @@ export default function ListingsPage() {
                     key={tab.id}
                     type="button"
                     onClick={() => handleTabChange(tab.id as ExploreTab)}
-                    className={`flex items-center gap-2 border-b-2 pb-3 transition ${
+                    className={`flex flex-1 items-center justify-center gap-2 px-4 py-3 transition ${
                       isActive
-                        ? 'border-slate-950 text-slate-950'
-                        : 'border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-950'
+                        ? 'bg-black text-white'
+                        : 'bg-white text-black/55 hover:bg-[#fff7ed] hover:text-[#f97316]'
                     }`}
                   >
                     <Icon />
@@ -413,13 +413,13 @@ export default function ListingsPage() {
 
         {shouldShowResults && (
         <section className="mx-auto max-w-7xl px-5 py-12">
-          <div className="mb-8 flex items-end justify-between gap-4">
+          <div className="mb-8 grid gap-4 border-b-2 border-black pb-6 md:grid-cols-[1fr_auto] md:items-end">
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-2xl font-bold text-slate-950">Airbnb Originals</h1>
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-lg">{'>'}</span>
+                <h1 className="text-3xl font-black text-black">ListOn Edit</h1>
+                <span className="flex h-8 w-8 items-center justify-center border-2 border-black bg-[#f97316] text-lg font-black text-white">{'>'}</span>
               </div>
-              <p className="mt-1 text-sm text-slate-500">
+              <p className="mt-1 text-sm font-semibold text-black/55">
                 {activeResults.length} selected stay{activeResults.length === 1 ? '' : 's'} from the marketplace
               </p>
             </div>
@@ -428,7 +428,7 @@ export default function ListingsPage() {
                 type="button"
                 onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
                 disabled={currentPage === 1}
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-500 disabled:opacity-40"
+                className="flex h-8 w-8 items-center justify-center border-2 border-black bg-white text-black disabled:opacity-40"
               >
                 {'<'}
               </button>
@@ -436,7 +436,7 @@ export default function ListingsPage() {
                 type="button"
                 onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
                 disabled={currentPage === totalPages}
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-950 disabled:opacity-40"
+                className="flex h-8 w-8 items-center justify-center border-2 border-black bg-[#f97316] text-white disabled:opacity-40"
               >
                 {'>'}
               </button>
@@ -463,7 +463,7 @@ export default function ListingsPage() {
               }
             />
           ) : (
-            <div className="grid gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            <div className="grid gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {currentPageResults.map((result) => (
                 <ExploreListingCard
                   key={result.listing.id}
@@ -481,18 +481,18 @@ export default function ListingsPage() {
                 type="button"
                 onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
                 disabled={currentPage === 1}
-                className="rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+                className="border-2 border-black px-5 py-2 text-sm font-black text-black transition hover:bg-[#fff7ed] disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Previous
               </button>
-              <span className="text-sm font-semibold text-slate-500">
+              <span className="text-sm font-black text-black/55">
                 Page {currentPage} of {totalPages}
               </span>
               <button
                 type="button"
                 onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
                 disabled={currentPage === totalPages}
-                className="rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+                className="border-2 border-black px-5 py-2 text-sm font-black text-black transition hover:bg-[#fff7ed] disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Next
               </button>
@@ -591,7 +591,7 @@ function listingInfoContent(result: ListingWithDistance) {
     <div style="max-width:220px;font-family:Inter,Arial,sans-serif">
       <strong style="display:block;margin-bottom:4px;color:#0f172a">${result.listing.title}</strong>
       <span style="display:block;color:#64748b">${result.listing.location}</span>
-      <span style="display:block;margin-top:6px;color:#ff432e;font-weight:700">$${result.listing.pricePerNight} night</span>
+      <span style="display:block;margin-top:6px;color:#f97316;font-weight:700">$${result.listing.pricePerNight} night</span>
       <span style="display:block;margin-top:4px;color:#475569">${formatDistance(result.distance)} away</span>
     </div>
   `
@@ -610,23 +610,23 @@ function AiPromptPanel({
 }) {
   return (
     <div className={isCompact ? 'mx-auto max-w-2xl' : ''}>
-      <div className={`flex flex-col overflow-hidden rounded-full border border-slate-200 bg-white shadow-2xl shadow-slate-900/10 md:flex-row md:items-center ${
-        isCompact ? 'shadow-lg' : ''
+      <div className={`flex flex-col overflow-hidden border-2 border-black bg-white shadow-[8px_8px_0_#f97316] md:flex-row md:items-center ${
+        isCompact ? 'shadow-[5px_5px_0_#f97316]' : ''
       }`}>
         <label className={`flex flex-1 flex-col ${isCompact ? 'px-6 py-3' : 'px-8 py-4'}`}>
-          <span className="text-xs font-bold text-slate-950">AI prompt</span>
+          <span className="text-xs font-black uppercase tracking-[0.16em] text-black">AI prompt</span>
           <input
             value={aiPrompt}
             onChange={(event) => onPromptChange(event.target.value)}
             placeholder="Tell AI what kind of stay you need"
-            className="mt-1 w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-500"
+            className="mt-1 w-full bg-transparent text-sm font-semibold text-black outline-none placeholder:text-black/40"
           />
         </label>
         <button
           type="button"
           onClick={onSearch}
           disabled={!aiPrompt.trim()}
-          className={`${isCompact ? 'h-11 w-11' : 'h-14 w-14'} m-2 inline-flex shrink-0 items-center justify-center rounded-full bg-[#ff432e] text-xl text-white transition hover:bg-[#e93623] disabled:cursor-not-allowed disabled:opacity-50`}
+          className={`${isCompact ? 'h-11 w-11' : 'h-14 w-14'} m-2 inline-flex shrink-0 items-center justify-center bg-[#f97316] text-xl text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-50`}
         >
           <FiSend />
         </button>
@@ -660,23 +660,23 @@ function MapSearchPanel({
 }) {
   return (
     <div className="space-y-3">
-      <div className="flex flex-col overflow-hidden rounded-full border border-slate-200 bg-white shadow-2xl shadow-slate-900/10 md:flex-row md:items-center">
+      <div className="flex flex-col overflow-hidden border-2 border-black bg-white shadow-[8px_8px_0_#f97316] md:flex-row md:items-center">
         <label className="flex flex-1 flex-col px-8 py-4">
-          <span className="text-xs font-bold text-slate-950">Search</span>
+          <span className="text-xs font-black uppercase tracking-[0.16em] text-black">Search</span>
           <input
             value={mapQuery}
             onChange={(event) => onMapQueryChange(event.target.value)}
             placeholder="Property name, type, or place"
-            className="mt-1 w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-500"
+            className="mt-1 w-full bg-transparent text-sm font-semibold text-black outline-none placeholder:text-black/40"
           />
         </label>
-        <div className="hidden h-8 w-px bg-slate-200 md:block" />
+        <div className="hidden h-10 w-0.5 bg-black md:block" />
         <label className="flex flex-1 flex-col px-8 py-4">
-          <span className="text-xs font-bold text-slate-950">Where</span>
+          <span className="text-xs font-black uppercase tracking-[0.16em] text-black">Where</span>
           <select
             value={currentLocation ? 'Current location' : selectedLocationLabel}
             onChange={(event) => onLocationChange(event.target.value)}
-            className="mt-1 w-full bg-transparent text-sm text-slate-700 outline-none"
+            className="mt-1 w-full bg-transparent text-sm font-semibold text-black outline-none"
           >
             {currentLocation && <option>Current location</option>}
             {savedLocations.map((location) => (
@@ -684,13 +684,13 @@ function MapSearchPanel({
             ))}
           </select>
         </label>
-        <div className="hidden h-8 w-px bg-slate-200 md:block" />
+        <div className="hidden h-10 w-0.5 bg-black md:block" />
         <label className="flex flex-1 flex-col px-8 py-4">
-          <span className="text-xs font-bold text-slate-950">Distance</span>
+          <span className="text-xs font-black uppercase tracking-[0.16em] text-black">Distance</span>
           <select
             value={radiusKm}
             onChange={(event) => onRadiusChange(Number(event.target.value))}
-            className="mt-1 w-full bg-transparent text-sm text-slate-700 outline-none"
+            className="mt-1 w-full bg-transparent text-sm font-semibold text-black outline-none"
           >
             {radiusOptions.map((option) => (
               <option key={option.value} value={option.value}>
@@ -703,7 +703,7 @@ function MapSearchPanel({
         <button
           type="button"
           onClick={onUseCurrentLocation}
-          className="mx-3 inline-flex items-center gap-2 text-sm font-semibold text-[#ff432e]"
+          className="mx-3 inline-flex items-center gap-2 text-sm font-black text-[#f97316]"
         >
           <FiMapPin />
           Use location
@@ -711,14 +711,14 @@ function MapSearchPanel({
         <button
           type="button"
           onClick={onSearch}
-          className="m-2 inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#ff432e] text-xl text-white transition hover:bg-[#e93623]"
+          className="m-2 inline-flex h-14 w-14 shrink-0 items-center justify-center bg-[#f97316] text-xl text-white transition hover:bg-black"
         >
           <FiSearch />
         </button>
       </div>
 
       {locationStatus && (
-        <p className="rounded-xl border border-[#ffd6ce] bg-[#fff1ec] px-4 py-3 text-sm font-medium text-[#c92f20]">
+        <p className="border-2 border-[#f97316] bg-[#fff7ed] px-4 py-3 text-sm font-bold text-black">
           {locationStatus}
         </p>
       )}
@@ -745,24 +745,24 @@ function FilterPanel({
 }) {
   return (
     <div className="space-y-4">
-      <div className="flex flex-col overflow-hidden rounded-full border border-slate-200 bg-white shadow-2xl shadow-slate-900/10 md:flex-row md:items-center">
+      <div className="flex flex-col overflow-hidden border-2 border-black bg-white shadow-[8px_8px_0_#f97316] md:flex-row md:items-center">
         <label className="flex flex-1 flex-col px-8 py-4">
-          <span className="text-xs font-bold text-slate-950">Where</span>
+          <span className="text-xs font-black uppercase tracking-[0.16em] text-black">Where</span>
           <input
             value={query}
             onChange={(event) => onQueryChange(event.target.value)}
             placeholder="Property name, type, or place"
             type="search"
-            className="mt-1 w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-500"
+            className="mt-1 w-full bg-transparent text-sm font-semibold text-black outline-none placeholder:text-black/40"
           />
         </label>
-        <div className="hidden h-8 w-px bg-slate-200 md:block" />
+        <div className="hidden h-10 w-0.5 bg-black md:block" />
         <label className="flex flex-1 flex-col px-8 py-4">
-          <span className="text-xs font-bold text-slate-950">Type</span>
+          <span className="text-xs font-black uppercase tracking-[0.16em] text-black">Type</span>
           <select
             value={selectedType}
             onChange={(event) => onTypeChange(event.target.value as 'ALL' | ListingType)}
-            className="mt-1 w-full bg-transparent text-sm text-slate-700 outline-none"
+            className="mt-1 w-full bg-transparent text-sm font-semibold text-black outline-none"
           >
             {listingTypes.map((type) => (
               <option key={type} value={type}>
@@ -771,22 +771,22 @@ function FilterPanel({
             ))}
           </select>
         </label>
-        <div className="hidden h-8 w-px bg-slate-200 md:block" />
+        <div className="hidden h-10 w-0.5 bg-black md:block" />
         <label className="flex flex-1 flex-col px-8 py-4">
-          <span className="text-xs font-bold text-slate-950">Who</span>
+          <span className="text-xs font-black uppercase tracking-[0.16em] text-black">Who</span>
           <input
             type="number"
             min={1}
             max={12}
             value={minGuests}
             onChange={(event) => onGuestsChange(Number(event.target.value))}
-            className="mt-1 w-full bg-transparent text-sm text-slate-700 outline-none"
+            className="mt-1 w-full bg-transparent text-sm font-semibold text-black outline-none"
           />
         </label>
         <button
           type="button"
           onClick={() => undefined}
-          className="m-2 inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#ff432e] text-xl text-white transition hover:bg-[#e93623]"
+          className="m-2 inline-flex h-14 w-14 shrink-0 items-center justify-center bg-[#f97316] text-xl text-white transition hover:bg-black"
         >
           <FiSearch />
         </button>
@@ -795,7 +795,7 @@ function FilterPanel({
         <button
           type="button"
           onClick={onClear}
-          className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+          className="border-2 border-black bg-white px-5 py-3 text-sm font-black text-black transition hover:bg-[#fff7ed]"
         >
           Clear
         </button>
@@ -862,7 +862,7 @@ function MapPreview({
           googleBounds.extend(result.listing.coordinates)
           const isNearest = nearestResult?.listing.id === result.listing.id
           const marker = new maps.Marker({
-            icon: priceMarkerIcon(isNearest ? '#ff432e' : '#0f172a'),
+            icon: priceMarkerIcon(isNearest ? '#f97316' : '#0f172a'),
             label: String(index + 1),
             map,
             position: result.listing.coordinates,
@@ -899,8 +899,8 @@ function MapPreview({
   }, [mapMode, nearestResult?.listing.id, origin, results])
 
   return (
-    <div className="mb-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-      <div className="relative h-[28rem] overflow-hidden bg-[#dbe9e4]">
+    <div className="mb-8 overflow-hidden border-2 border-black bg-white shadow-[8px_8px_0_#f97316]">
+      <div className="relative h-[28rem] overflow-hidden bg-[#fff7ed]">
         {googleMapsApiKey ? (
           <div ref={mapRef} className="absolute inset-0" aria-label="Interactive Google map showing nearby listings" />
         ) : (
@@ -909,35 +909,35 @@ function MapPreview({
             <div className="absolute left-[-10%] top-[58%] h-4 w-[120%] rotate-[10deg] bg-white/70" />
             <div className="absolute left-[32%] top-[-10%] h-[120%] w-4 rotate-[16deg] bg-white/70" />
             <div className="absolute left-[68%] top-[-8%] h-[120%] w-3 rotate-[-18deg] bg-white/60" />
-            <div className="absolute left-[5%] top-[8%] h-32 w-52 rounded-full bg-cyan-200/70" />
-            <div className="absolute right-[8%] bottom-[12%] h-44 w-64 rounded-full bg-emerald-200/70" />
+            <div className="absolute left-[5%] top-[8%] h-32 w-52 border-2 border-black bg-[#f97316]/30" />
+            <div className="absolute right-[8%] bottom-[12%] h-44 w-64 border-2 border-black bg-white/70" />
           </div>
         )}
 
         {mapStatus && (
-          <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/60 text-sm font-semibold text-slate-600 backdrop-blur-sm">
+          <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/75 text-sm font-black text-black backdrop-blur-sm">
             {mapStatus}
           </div>
         )}
 
-        <div className="pointer-events-none absolute left-5 top-5 z-20 rounded-2xl bg-white/95 px-5 py-4 shadow-lg backdrop-blur">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff432e]">
+        <div className="pointer-events-none absolute left-5 top-5 z-20 border-2 border-black bg-white/95 px-5 py-4 shadow-[6px_6px_0_#f97316] backdrop-blur">
+          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#f97316]">
             {googleMapsApiKey ? 'Google map' : 'Nearest map'}
           </p>
-          <h2 className="mt-1 text-lg font-bold text-slate-950">
+          <h2 className="mt-1 text-lg font-black text-black">
             {results.length} listing{results.length === 1 ? '' : 's'} on map
           </h2>
         </div>
 
         {googleMapsApiKey && (
-          <div className="absolute right-5 top-5 z-20 flex rounded-full bg-white p-1 shadow-lg">
+          <div className="absolute right-5 top-5 z-20 flex border-2 border-black bg-white p-1 shadow-lg">
             {(['2d', '3d'] as const).map((mode) => (
               <button
                 key={mode}
                 type="button"
                 onClick={() => setMapMode(mode)}
                 className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] transition ${
-                  mapMode === mode ? 'bg-[#ff432e] text-white' : 'text-slate-600 hover:bg-slate-100'
+                  mapMode === mode ? 'bg-[#f97316] text-white' : 'text-black/60 hover:bg-[#fff7ed]'
                 }`}
               >
                 {mode}
@@ -949,7 +949,7 @@ function MapPreview({
         {!googleMapsApiKey && (
           <>
             <div
-              className="absolute z-20 flex -translate-x-1/2 -translate-y-1/2 items-center rounded-full border border-slate-950 bg-white px-3 py-2 text-xs font-bold text-slate-950 shadow-lg"
+              className="absolute z-20 flex -translate-x-1/2 -translate-y-1/2 items-center border-2 border-black bg-white px-3 py-2 text-xs font-black text-black shadow-lg"
               style={markerStyle(origin, bounds)}
             >
               You
@@ -964,7 +964,7 @@ function MapPreview({
                   href={`#/listings/${result.listing.id}`}
                   style={markerStyle(result.listing.coordinates, bounds)}
                   className={`absolute z-30 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-full px-3 py-2 text-xs font-bold shadow-lg transition hover:scale-105 ${
-                    isNearest ? 'bg-[#ff432e] text-white' : 'bg-slate-950 text-white'
+                    isNearest ? 'bg-[#f97316] text-white' : 'bg-black text-white'
                   }`}
                   title={result.listing.title}
                 >
@@ -988,10 +988,10 @@ function EmptyResults({
   message?: string
 }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
-      <h2 className="text-xl font-bold text-slate-950">{message}</h2>
+    <div className="border-2 border-black bg-white p-8 text-center shadow-[8px_8px_0_#f97316]">
+      <h2 className="text-xl font-black text-black">{message}</h2>
       {message === 'No stays found' && nearestResult && (
-        <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
+        <p className="mx-auto mt-2 max-w-md text-sm font-semibold leading-6 text-black/55">
           The nearest listing is {nearestResult.listing.title} at {formatDistance(nearestResult.distance)}.
           Try widening the search.
         </p>
@@ -1014,7 +1014,7 @@ function ExploreListingCard({
   return (
     <article className="group relative bg-white">
       <a href={`#/listings/${result.listing.id}`} className="block">
-        <div className="relative aspect-square overflow-hidden rounded-2xl bg-slate-100">
+        <div className="relative aspect-[5/4] overflow-hidden border-2 border-black bg-black">
           {firstPhoto && (
             <img
               src={firstPhoto.url}
@@ -1023,26 +1023,26 @@ function ExploreListingCard({
             />
           )}
           <div className="absolute left-3 top-3 flex flex-wrap gap-2 text-[11px]">
-            <span className="rounded-full bg-white/95 px-3 py-1 font-semibold text-slate-800 shadow-sm">
-              Original
+            <span className="border border-black bg-white px-3 py-1 font-black uppercase tracking-[0.12em] text-black">
+              Edit
             </span>
             {isNearest && (
-              <span className="rounded-lg bg-[#ff432e] px-3 py-1 text-xs font-semibold text-white shadow-sm">
+              <span className="bg-[#f97316] px-3 py-1 text-xs font-black uppercase tracking-[0.12em] text-white shadow-sm">
                 Nearest
               </span>
             )}
             {showScore && (
-              <span className="rounded-lg bg-slate-950 px-3 py-1 text-xs font-semibold text-white shadow-sm">
+              <span className="bg-black px-3 py-1 text-xs font-black uppercase tracking-[0.12em] text-white shadow-sm">
                 AI match {result.score ?? 0}
               </span>
             )}
           </div>
         </div>
-        <div className="pt-3">
-          <h3 className="line-clamp-2 text-sm font-bold leading-5 text-slate-950">{result.listing.title}</h3>
-          <p className="mt-1 truncate text-sm text-slate-500">{result.listing.location}</p>
-          <p className="mt-1 text-sm text-slate-500">Coming May 20</p>
-          <p className="mt-1 text-sm font-semibold text-slate-950">${result.listing.pricePerNight} night</p>
+        <div className="border-x-2 border-b-2 border-black bg-white p-3 transition group-hover:shadow-[6px_6px_0_#f97316]">
+          <h3 className="line-clamp-2 text-sm font-black leading-5 text-black">{result.listing.title}</h3>
+          <p className="mt-1 truncate text-sm font-semibold text-black/55">{result.listing.location}</p>
+          <p className="mt-1 text-sm font-semibold text-black/55">Coming May 20</p>
+          <p className="mt-2 inline-flex bg-[#f97316] px-2 py-1 text-sm font-black text-white">${result.listing.pricePerNight} night</p>
         </div>
       </a>
       <SavedBadge listingId={result.listing.id} className="absolute right-3 top-3 bg-white/90" />

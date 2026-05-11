@@ -81,7 +81,7 @@ export default function ProfilePage() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
           <UserAvatar user={previewUser} size="xl" className="ring-4 ring-[#ffe0d7]" />
           <div>
-            <p className="text-sm font-semibold uppercase text-[#ff432e]">{currentUser.role}</p>
+            <p className="text-sm font-semibold uppercase text-[#f97316]">{currentUser.role}</p>
             <h2 className="mt-2 text-3xl font-bold text-[#292626]">{name || currentUser.name}</h2>
             <p className="mt-1 text-sm text-[#857d7a]">{currentUser.email}</p>
           </div>
@@ -94,7 +94,7 @@ export default function ProfilePage() {
               setError('')
               setIsEditing(true)
             }}
-            className="inline-flex w-fit items-center gap-2 rounded-xl bg-[#ff432e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+            className="inline-flex w-fit items-center gap-2 rounded-xl bg-[#f97316] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]"
           >
             <FiEdit3 />
             Update profile
@@ -106,7 +106,7 @@ export default function ProfilePage() {
       <form onSubmit={handleSubmit} className="mt-8 grid gap-5 md:grid-cols-2">
         <div className="rounded-2xl border border-[#eadfdb] bg-[#fff8f5] p-5 md:col-span-2">
           <div className="grid gap-6 lg:grid-cols-[14rem_1fr] lg:items-center">
-            <div className="mx-auto flex h-52 w-52 items-center justify-center overflow-hidden rounded-full border-4 border-white bg-white shadow-lg shadow-[#ffd6ce]">
+            <div className="mx-auto flex h-52 w-52 items-center justify-center overflow-hidden rounded-full border-4 border-white bg-white shadow-lg shadow-[#fed7aa]">
               {avatar ? (
                 <img src={avatar} alt={`${name || currentUser.name} preview`} className="h-full w-full object-cover" />
               ) : (
@@ -115,7 +115,7 @@ export default function ProfilePage() {
             </div>
 
             <div>
-              <p className="text-sm font-semibold uppercase text-[#ff432e]">Avatar preview</p>
+              <p className="text-sm font-semibold uppercase text-[#f97316]">Avatar preview</p>
               <h3 className="mt-2 text-2xl font-bold text-[#292626]">
                 Review your image before saving
               </h3>
@@ -124,7 +124,7 @@ export default function ProfilePage() {
               </p>
 
               <div className="mt-5 flex flex-wrap items-center gap-3">
-                <label className="inline-flex cursor-pointer items-center gap-2 rounded-xl bg-[#ff432e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]">
+                <label className="inline-flex cursor-pointer items-center gap-2 rounded-xl bg-[#f97316] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]">
                   <FiUpload />
                   {avatar ? 'Change image' : 'Upload image'}
                   <input
@@ -162,7 +162,7 @@ export default function ProfilePage() {
           <input
             value={name}
             onChange={(event) => setName(event.target.value)}
-            className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#ff432e] focus:ring-2 focus:ring-[#ff432e]/20"
+            className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20"
             required
           />
         </label>
@@ -172,7 +172,7 @@ export default function ProfilePage() {
           <input
             value={username}
             onChange={(event) => setUsername(event.target.value)}
-            className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#ff432e] focus:ring-2 focus:ring-[#ff432e]/20"
+            className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20"
             required
           />
         </label>
@@ -182,7 +182,7 @@ export default function ProfilePage() {
           <input
             value={phone}
             onChange={(event) => setPhone(event.target.value)}
-            className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#ff432e] focus:ring-2 focus:ring-[#ff432e]/20"
+            className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-[#f97316] focus:ring-2 focus:ring-[#f97316]/20"
             required
           />
         </label>
@@ -212,7 +212,7 @@ export default function ProfilePage() {
         <div className="flex flex-wrap gap-3 md:col-span-2">
           <button
             type="submit"
-            className="inline-flex w-fit items-center gap-2 rounded-xl bg-[#ff432e] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e93623]"
+            className="inline-flex w-fit items-center gap-2 rounded-xl bg-[#f97316] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#000000]"
           >
             <FiSave />
             Save profile
@@ -236,7 +236,7 @@ export default function ProfilePage() {
           { label: 'Joined', value: new Date(currentUser.createdAt).toLocaleDateString() },
         ].map((item) => (
           <div key={item.label} className="rounded-xl border border-[#eadfdb] bg-[#fff8f5] p-5">
-            <FiUser className="mb-3 text-[#ff432e]" />
+            <FiUser className="mb-3 text-[#f97316]" />
             <p className="text-sm font-medium text-[#857d7a]">{item.label}</p>
             <p className="mt-2 font-semibold text-[#292626]">{item.value}</p>
           </div>

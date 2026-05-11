@@ -61,19 +61,19 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="grid h-screen overflow-hidden bg-white text-slate-900 lg:grid-cols-[0.95fr_1.05fr]">
+    <main className="grid h-screen overflow-hidden bg-white text-black lg:grid-cols-[0.9fr_1.1fr]">
       <div
-        className="hidden bg-slate-950 bg-cover bg-center text-white lg:block"
-        style={{ backgroundImage: `linear-gradient(90deg, rgba(15,23,42,.9), rgba(15,23,42,.35)), url(${authImage})` }}
+        className="hidden border-r-2 border-black bg-black bg-cover bg-center text-white lg:block"
+        style={{ backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.55)), url(${authImage})` }}
       >
         <div className="flex h-full flex-col justify-between p-10">
           <div>
             <Link to="/" className="inline-flex items-center text-4xl font-black tracking-tight">
-              Air<span className="text-[#ff432e]">bnb</span>
+              List<span className="text-[#f97316]">On</span>
             </Link>
           </div>
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#ff432e]">Your account</p>
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f97316]">Your account</p>
             <h2 className="mt-4 max-w-2xl text-5xl font-black leading-tight tracking-tight">
               Start exploring better stays with a personal profile.
             </h2>
@@ -85,22 +85,22 @@ export default function RegisterPage() {
       </div>
 
       <div
-        className="h-screen overflow-y-auto bg-[#f7f3f0] px-4 py-6"
+        className="h-screen overflow-y-auto bg-white px-4 py-6"
       >
         <div className="mx-auto flex min-h-full w-full max-w-lg items-center">
           <form
             onSubmit={handleSubmit}
-            className="relative overflow-hidden rounded-2xl border border-white/80 bg-white/95 p-5 shadow-2xl shadow-slate-950/30 backdrop-blur"
+            className="relative overflow-hidden border-2 border-black bg-white p-5 shadow-[10px_10px_0_#f97316]"
           >
-            <div className="absolute right-[-4rem] top-[-4rem] h-36 w-36 rounded-full bg-[#fff1ec]" />
+            <div className="absolute right-[-4rem] top-[-4rem] h-36 w-36 border-2 border-black bg-[#fff7ed]" />
             <div className="relative">
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#ff432e]">Create account</p>
-              <h1 className="mt-2 text-2xl font-black tracking-tight text-slate-950">Join ListOn today</h1>
-              <p className="mt-2 text-sm leading-5 text-slate-500">
+              <p className="text-xs font-black uppercase tracking-[0.25em] text-[#f97316]">Create account</p>
+              <h1 className="mt-2 text-2xl font-black tracking-tight text-black">Join ListOn today</h1>
+              <p className="mt-2 text-sm font-semibold leading-5 text-black/55">
                 Start as a guest, save favorites, post reviews, and manage bookings from your profile.
               </p>
 
-              <div className="mt-4 grid grid-cols-2 gap-2 rounded-xl border border-slate-200 bg-slate-50 p-1">
+              <div className="mt-4 grid grid-cols-2 gap-2 border-2 border-black bg-white p-1">
                 {[
                   { role: 'GUEST' as const, label: 'Sign up as guest', icon: FiUser },
                   { role: 'HOST' as const, label: 'Sign up as host', icon: FiBriefcase },
@@ -115,8 +115,8 @@ export default function RegisterPage() {
                       onClick={() => handleRoleChange(option.role)}
                       className={`flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-xs font-bold transition ${
                         isSelected
-                          ? 'bg-[#ff432e] text-white shadow-sm'
-                          : 'bg-transparent text-slate-600 hover:bg-white hover:text-slate-950'
+                          ? 'bg-[#f97316] text-white'
+                          : 'bg-transparent text-black/60 hover:bg-[#fff7ed] hover:text-black'
                       }`}
                     >
                       <Icon />
@@ -129,20 +129,20 @@ export default function RegisterPage() {
               <button
                 type="button"
                 onClick={handleGoogleLogin}
-                className="mt-4 flex w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 shadow-sm transition hover:border-[#ffd6ce] hover:bg-[#fff1ec]"
+                className="mt-4 flex w-full items-center justify-center gap-3 border-2 border-black bg-white px-4 py-2.5 text-sm font-black text-black transition hover:bg-[#fff7ed]"
               >
                 <FcGoogle className="text-xl" />
                 Continue with Google
               </button>
 
               <div className="my-4 flex items-center gap-3">
-                <span className="h-px flex-1 bg-slate-200" />
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">or register</span>
-                <span className="h-px flex-1 bg-slate-200" />
+                <span className="h-0.5 flex-1 bg-black" />
+                <span className="text-xs font-black uppercase tracking-[0.2em] text-black/45">or register</span>
+                <span className="h-0.5 flex-1 bg-black" />
               </div>
 
               {error && (
-                <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+                <p className="border-2 border-[#f97316] bg-[#fff7ed] px-4 py-3 text-sm font-bold text-black">
                   {error}
                 </p>
               )}
@@ -150,7 +150,7 @@ export default function RegisterPage() {
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 <label className="block sm:col-span-2">
                   <span className="text-sm font-bold text-slate-700">Full name</span>
-                  <span className="mt-1.5 flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 focus-within:border-[#ff432e] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#ff432e]/10">
+                  <span className="mt-1.5 flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 focus-within:border-[#f97316] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#f97316]/10">
                     <FiUser className="text-slate-400" />
                     <input
                       name="name"
@@ -166,7 +166,7 @@ export default function RegisterPage() {
 
                 <label className="block">
                   <span className="text-sm font-bold text-slate-700">Username</span>
-                  <span className="mt-1.5 flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 focus-within:border-[#ff432e] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#ff432e]/10">
+                  <span className="mt-1.5 flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 focus-within:border-[#f97316] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#f97316]/10">
                     <FiUser className="text-slate-400" />
                     <input
                       name="username"
@@ -182,7 +182,7 @@ export default function RegisterPage() {
 
                 <label className="block">
                   <span className="text-sm font-bold text-slate-700">Phone</span>
-                  <span className="mt-1.5 flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 focus-within:border-[#ff432e] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#ff432e]/10">
+                  <span className="mt-1.5 flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 focus-within:border-[#f97316] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#f97316]/10">
                     <FiPhone className="text-slate-400" />
                     <input
                       name="phone"
@@ -198,7 +198,7 @@ export default function RegisterPage() {
 
                 <label className="block sm:col-span-2">
                   <span className="text-sm font-bold text-slate-700">Email address</span>
-                  <span className="mt-1.5 flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 focus-within:border-[#ff432e] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#ff432e]/10">
+                  <span className="mt-1.5 flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 focus-within:border-[#f97316] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#f97316]/10">
                     <FiMail className="text-slate-400" />
                     <input
                       name="email"
@@ -215,7 +215,7 @@ export default function RegisterPage() {
 
                 <label className="block sm:col-span-2">
                   <span className="text-sm font-bold text-slate-700">Password</span>
-                  <span className="mt-1.5 flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 focus-within:border-[#ff432e] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#ff432e]/10">
+                  <span className="mt-1.5 flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2 focus-within:border-[#f97316] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#f97316]/10">
                     <FiLock className="text-slate-400" />
                     <input
                       name="password"
@@ -230,7 +230,7 @@ export default function RegisterPage() {
                     <button
                       type="button"
                       onClick={() => setShowPassword((current) => !current)}
-                      className="text-slate-400 transition hover:text-[#ff432e]"
+                      className="text-slate-400 transition hover:text-[#f97316]"
                       aria-label={showPassword ? 'Hide password' : 'Show password'}
                     >
                       {showPassword ? <FiEyeOff /> : <FiEye />}
@@ -241,7 +241,7 @@ export default function RegisterPage() {
 
               <button
                 type="submit"
-                className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#ff432e] px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-[#ff432e]/20 transition hover:bg-[#e93623]"
+                className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-[#f97316] px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-[#f97316]/20 transition hover:bg-[#000000]"
               >
                 Create account
                 <FiArrowRight />
@@ -249,7 +249,7 @@ export default function RegisterPage() {
 
               <p className="mt-3 text-center text-sm text-slate-600">
                 Already have an account?{' '}
-                <Link to="/login" className="font-semibold text-[#ff432e] hover:text-[#c92f20]">
+                <Link to="/login" className="font-semibold text-[#f97316] hover:text-[#f97316]">
                   Login
                 </Link>
               </p>
