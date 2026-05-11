@@ -82,7 +82,7 @@ export default function HomePage() {
             </motion.p>
             <motion.h1
               variants={fadeUp}
-              className={`max-w-3xl text-5xl font-black leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl ${
+              className={`max-w-3xl text-5xl font-black leading-[0.95] tracking-tight sm:text-7xl lg:text-7xl ${
                 isScrolled ? 'text-black' : 'text-white'
               }`}
             >
@@ -90,7 +90,7 @@ export default function HomePage() {
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className={`max-w-2xl text-base leading-8 sm:text-lg ${
+              className={`max-w-2xl text-base leading-8 text-xs ${
                 isScrolled ? 'text-black/70' : 'text-white/85'
               }`}
             >
@@ -115,7 +115,7 @@ export default function HomePage() {
                   className="w-full bg-transparent text-sm font-bold text-black outline-none placeholder:text-black/35"
                 />
               </label>
-              <label className="grid gap-2 border-2 border-black bg-white px-4 py-3">
+              <label className="grid gap-2 border-2 border-black bg-white px-4 py-3 rounded-xl shadow-md">
                 <span className="text-xs font-black uppercase tracking-[0.18em] text-black/50">Location</span>
                 <select className="w-full bg-transparent text-sm font-bold text-black outline-none">
                   <option>Location</option>
